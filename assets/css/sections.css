@@ -254,9 +254,18 @@
   padding-block: var(--space-8);
 }
 
-.works__header {
+.works__header,
+.pricing__header,
+.testimonials__header {
   text-align: center;
   margin-bottom: var(--space-6);
+}
+
+/* Абзацы-подписи центрируем: у p стоит max-width, без auto они уезжают влево */
+.works__header p,
+.pricing__header p,
+.testimonials__header p {
+  margin-inline: auto;
 }
 
 .works__grid {
@@ -276,11 +285,6 @@
   padding-block: var(--space-8);
 }
 
-
-.pricing__header {
-  text-align: center;
-  margin-bottom: var(--space-6);
-}
 
 .pricing__grid {
   display: grid;
@@ -302,11 +306,6 @@
 /* ——— Testimonials ——— */
 .testimonials {
   padding-block: var(--space-8);
-}
-
-.testimonials__header {
-  text-align: center;
-  margin-bottom: var(--space-6);
 }
 
 .testimonials__grid {
