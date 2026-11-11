@@ -2,7 +2,7 @@
   {
     "id": "work-1",
     "title": "Бесконтактный дозатор мыла",
-    "category": "Для дома",
+    "category": "Для дома",
     "video": "assets/video/work-1.mp4",
     "poster": "assets/img/posters/work-1.webp",
     "description": "Сенсор, выдача пены, движение камеры",
@@ -21,7 +21,7 @@
   },
   {
     "id": "work-3",
-    "title": "Коврик для мыши",
+    "title": "Коврик для мыши",
     "category": "Аксессуары",
     "video": "assets/video/work-3.mp4",
     "poster": "assets/img/posters/work-3.webp",
@@ -41,7 +41,7 @@
   },
   {
     "id": "work-5",
-    "title": "LED-лампа с регулировкой",
+    "title": "LED-лампа с регулировкой",
     "category": "Освещение",
     "video": "assets/video/work-5.mp4",
     "poster": "assets/img/posters/work-5.webp",
@@ -51,7 +51,7 @@
   },
   {
     "id": "work-6",
-    "title": "Органайзер для косметики",
+    "title": "Органайзер для косметики",
     "category": "Хранение",
     "video": "assets/video/work-6.mp4",
     "poster": "assets/img/posters/work-6.webp",

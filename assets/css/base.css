@@ -165,13 +165,13 @@ body > footer {
 .bg-scene__blob--1 {
   top: -18vmax;
   left: -12vmax;
-  background: #E9DCC8;
+  background: #EBCFC8;
 }
 
 .bg-scene__blob--2 {
   top: 28vh;
   right: -22vmax;
-  background: #CFE0EA;
+  background: #DDCFE0;
   animation-duration: 62s;
   animation-delay: -18s;
 }
@@ -179,7 +179,7 @@ body > footer {
 .bg-scene__blob--3 {
   bottom: -26vmax;
   left: 18vw;
-  background: #D8E6D2;
+  background: #CCDCCB;
   animation-duration: 54s;
   animation-delay: -32s;
 }

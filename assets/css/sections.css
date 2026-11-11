@@ -62,38 +62,40 @@
   text-align: center;
 }
 
-/* Три цветных пятна медленно перетекают по первому экрану */
+/* Три цветных пятна заметно перетекают по первому экрану */
 .hero::before {
   content: "";
   position: absolute;
-  inset: -25%;
+  inset: -35%;
   z-index: -1;
   pointer-events: none;
-  opacity: 0.9;
-  filter: blur(26px);
   background-image:
-    radial-gradient(closest-side, rgba(232, 213, 183, 0.95), rgba(232, 213, 183, 0)),
-    radial-gradient(closest-side, rgba(198, 219, 234, 0.95), rgba(198, 219, 234, 0)),
-    radial-gradient(closest-side, rgba(207, 224, 196, 0.9), rgba(207, 224, 196, 0));
-  background-size: 52% 68%, 58% 74%, 62% 78%;
-  background-position: 8% 18%, 92% 10%, 48% 100%;
+    radial-gradient(closest-side, rgba(232, 200, 194, 0.95), rgba(232, 200, 194, 0)),
+    radial-gradient(closest-side, rgba(222, 204, 218, 0.95), rgba(222, 204, 218, 0)),
+    radial-gradient(closest-side, rgba(198, 214, 200, 0.92), rgba(198, 214, 200, 0));
+  background-size: 46% 62%, 52% 70%, 58% 74%;
+  background-position: 2% 8%, 98% 4%, 50% 104%;
   background-repeat: no-repeat;
-  animation: heroDrift 18s ease-in-out infinite alternate;
+  filter: blur(22px);
+  animation: heroDrift 14s ease-in-out infinite alternate;
   will-change: background-position;
 }
 
 @keyframes heroDrift {
   0% {
-    background-position: 8% 18%, 92% 10%, 48% 100%;
+    background-position: 2% 8%, 98% 4%, 50% 104%;
   }
-  33% {
-    background-position: 58% 46%, 34% 52%, 18% 40%;
+  25% {
+    background-position: 62% 34%, 26% 58%, 6% 46%;
   }
-  66% {
-    background-position: 22% 78%, 76% 62%, 72% 26%;
+  50% {
+    background-position: 30% 88%, 68% 92%, 84% 22%;
+  }
+  75% {
+    background-position: 88% 56%, 12% 24%, 40% 78%;
   }
   100% {
-    background-position: 44% 96%, 62% 88%, 88% 58%;
+    background-position: 16% 42%, 84% 68%, 96% 34%;
   }
 }
 
