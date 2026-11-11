@@ -1,0 +1,384 @@
+/* ==========================================================================
+   Section Layouts — VideoPulse
+   ========================================================================== */
+
+/* ——— Navigation ——— */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-nav);
+  background: rgba(250, 250, 248, 0.8);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--c-border);
+}
+
+.nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: var(--space-3);
+}
+
+.nav__logo {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--c-text);
+  letter-spacing: var(--tracking-tight);
+}
+
+.nav__links {
+  display: flex;
+  gap: var(--space-5);
+  list-style: none;
+}
+
+.nav__links a {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--c-text-muted);
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.nav__links a:hover {
+  color: var(--c-text);
+}
+
+@media (max-width: 48em) {
+  .nav__links {
+    gap: var(--space-3);
+  }
+  .nav__links a {
+    font-size: var(--text-xs);
+  }
+}
+
+/* ——— Hero (светлый экран) + движущийся градиент ——— */
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding-block: var(--space-8);
+  text-align: center;
+}
+
+/* Три цветных пятна заметно перетекают по первому экрану */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -35%;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    radial-gradient(closest-side, rgba(232, 200, 194, 0.95), rgba(232, 200, 194, 0)),
+    radial-gradient(closest-side, rgba(222, 204, 218, 0.95), rgba(222, 204, 218, 0)),
+    radial-gradient(closest-side, rgba(198, 214, 200, 0.92), rgba(198, 214, 200, 0));
+  background-size: 46% 62%, 52% 70%, 58% 74%;
+  background-position: 2% 8%, 98% 4%, 50% 104%;
+  background-repeat: no-repeat;
+  filter: blur(22px);
+  animation: heroDrift 14s ease-in-out infinite alternate;
+  will-change: background-position;
+}
+
+@keyframes heroDrift {
+  0% {
+    background-position: 2% 8%, 98% 4%, 50% 104%;
+  }
+  25% {
+    background-position: 62% 34%, 26% 58%, 6% 46%;
+  }
+  50% {
+    background-position: 30% 88%, 68% 92%, 84% 22%;
+  }
+  75% {
+    background-position: 88% 56%, 12% 24%, 40% 78%;
+  }
+  100% {
+    background-position: 16% 42%, 84% 68%, 96% 34%;
+  }
+}
+
+.hero__title {
+  margin-bottom: var(--space-4);
+  max-width: 20ch;
+  margin-inline: auto;
+}
+
+.hero__subtitle {
+  font-size: var(--text-lg);
+  color: var(--c-text-muted);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-6);
+  max-width: 48ch;
+  margin-inline: auto;
+}
+
+.hero__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-3);
+}
+
+.hero__price {
+  font-size: var(--text-sm);
+  color: var(--c-text-muted);
+}
+
+/* ——— Transform Section (тёмный экран: фото → видео, цикл 7 сек) ——— */
+.transform {
+  background: var(--c-dark-bg);
+  color: var(--c-dark-text);
+  padding-block: var(--space-8);
+  position: relative;
+  overflow: hidden;
+}
+
+.transform__inner {
+  display: grid;
+  gap: var(--space-6);
+  align-items: center;
+}
+
+@media (min-width: 48em) {
+  .transform__inner {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-7);
+  }
+}
+
+.transform__text h2 {
+  color: var(--c-dark-text);
+  margin-bottom: var(--space-4);
+}
+
+.transform__text p {
+  color: rgba(237, 237, 237, 0.85);
+  margin-bottom: var(--space-3);
+}
+
+.transform__demo {
+  position: relative;
+  width: min(100%, 24rem);
+  aspect-ratio: 9 / 16;
+  margin-inline: auto;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #000;
+  isolation: isolate;
+}
+
+.transform__photo,
+.transform__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.transform__photo {
+  z-index: 1;
+}
+
+.transform__video {
+  z-index: 2;
+  clip-path: inset(0 100% 0 0);
+  animation: transformWipe 7s var(--ease-in-out) infinite;
+}
+
+.transform__scan {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  pointer-events: none;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.95) 0,
+    rgba(255, 255, 255, 0.95) 2px,
+    rgba(255, 255, 255, 0) 2px
+  );
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.8));
+  transform: translateX(-2px);
+  animation: transformScan 7s var(--ease-in-out) infinite;
+}
+
+@keyframes transformWipe {
+  0%   { clip-path: inset(0 100% 0 0); opacity: 1; }
+  8%   { clip-path: inset(0 100% 0 0); opacity: 1; }
+  38%  { clip-path: inset(0 0 0 0);    opacity: 1; }
+  80%  { clip-path: inset(0 0 0 0);    opacity: 1; }
+  88%  { clip-path: inset(0 0 0 0);    opacity: 0; }
+  100% { clip-path: inset(0 0 0 0);    opacity: 0; }
+}
+
+@keyframes transformScan {
+  0%   { transform: translateX(0);     opacity: 0; }
+  8%   { transform: translateX(0);     opacity: 1; }
+  36%  { transform: translateX(100%);  opacity: 1; }
+  38%  { transform: translateX(100%);  opacity: 0; }
+  100% { transform: translateX(100%);  opacity: 0; }
+}
+
+.transform__label {
+  position: absolute;
+  bottom: var(--space-4);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--c-text);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(4px);
+  white-space: nowrap;
+  z-index: 10;
+}
+
+.transform__label-arrow {
+  color: var(--c-accent);
+}
+
+/* ——— Works Grid ——— */
+.works {
+  padding-block: var(--space-8);
+}
+
+.works__header,
+.pricing__header,
+.testimonials__header {
+  text-align: center;
+  margin-bottom: var(--space-6);
+}
+
+/* Абзацы-подписи центрируем: у p стоит max-width, без auto они уезжают влево */
+.works__header p,
+.pricing__header p,
+.testimonials__header p {
+  margin-inline: auto;
+}
+
+.works__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(16rem, 100%), 1fr));
+  gap: var(--space-4);
+}
+
+@media (min-width: 48em) {
+  .works__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ——— Pricing Grid ——— */
+.pricing {
+  padding-block: var(--space-8);
+}
+
+
+.pricing__grid {
+  display: grid;
+  gap: var(--space-5);
+}
+
+@media (min-width: 48em) {
+  .pricing__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 64em) {
+  .pricing__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ——— Testimonials ——— */
+.testimonials {
+  padding-block: var(--space-8);
+}
+
+.testimonials__grid {
+  display: grid;
+  gap: var(--space-5);
+}
+
+@media (min-width: 48em) {
+  .testimonials__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 64em) {
+  .testimonials__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ——— Contact/CTA ——— */
+.contact {
+  padding-block: var(--space-8);
+  text-align: center;
+  background: var(--c-accent);
+  color: white;
+}
+
+.contact h2,
+.contact p {
+  color: white;
+}
+
+.contact p {
+  margin-inline: auto;
+  opacity: 0.9;
+}
+
+.contact .btn-primary {
+  background: white;
+  color: var(--c-accent);
+}
+
+.contact .btn-primary:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+}
+
+/* ——— Footer ——— */
+.footer {
+  padding-block: var(--space-5);
+  text-align: center;
+  font-size: var(--text-sm);
+  color: var(--c-text-muted);
+  border-top: 1px solid var(--c-border);
+}
+
+.footer a {
+  color: var(--c-text-muted);
+  text-decoration: underline;
+}
+
+/* ——— Уменьшенное движение: показываем видео сразу, без сканера и дрейфа ——— */
+@media (prefers-reduced-motion: reduce) {
+  .bg-scene__blob,
+  .hero::before {
+    animation: none;
+  }
+  .transform__video {
+    animation: none;
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
+  .transform__scan {
+    display: none;
+  }
+}
