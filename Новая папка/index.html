@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI-видеообложки для товаров на Wildberries и Ozon. Превращаем фото в короткий рекламный ролик за 2 дня.">
+  <title>VideoPulse — AI-видеообложки для Wildberries и Ozon</title>
+  
+  <!-- Preconnect для ускорения загрузки шрифтов -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Шрифты Inter и Inter Tight -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Стили -->
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/sections.css">
+</head>
+<body>
+
+  <!-- ==================== Navigation ==================== -->
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a href="#" class="nav__logo">VideoPulse</a>
+      <ul class="nav__links">
+        <li><a href="#works">Работы</a></li>
+        <li><a href="#pricing">Прайс</a></li>
+        <li><a href="#testimonials">Отзывы</a></li>
+        <li><a href="#contact">Связь</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ==================== Hero ==================== -->
+  <section class="hero section">
+    <div class="container">
+      <h1 class="hero__title reveal">Карточка, которую досматривают до конца</h1>
+      <p class="hero__subtitle reveal" data-delay="1">
+        Видеообложки 5–30 секунд из ваших фото.<br>Без съёмки. Сдаём за 2 дня.
+      </p>
+      <div class="hero__cta reveal" data-delay="2">
+        <a href="#works" class="btn btn-primary btn-lg">Смотреть работы</a>
+        <span class="hero__price">от 2 500 ₽</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== Transform (сигнатурная анимация) ==================== -->
+  <section class="transform section">
+    <div class="container transform__inner">
+      <div class="transform__text">
+        <h2>Фото → Видео</h2>
+        <p>Статичное изображение товара превращается в короткий рекламный ролик с движением камеры, анимацией объектов и плавными переходами.</p>
+        <p>Никакой съёмки. Только ваши исходные фотографии, AI-анимация и профессиональный монтаж.</p>
+      </div>
+      <div class="transform__demo">
+        <img 
+          class="transform__photo" 
+          src="assets/img/posters/work-1.webp" 
+          alt="Исходное фото"
+        />
+        <video 
+          class="transform__video" 
+          src="assets/video/work-1.mp4"
+          loop
+          muted
+          playsinline
+          preload="none"
+        ></video>
+        <div class="transform__label">фото → видео</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== Works ==================== -->
+  <section id="works" class="works section">
+    <div class="container">
+      <header class="works__header">
+        <h2 class="reveal">Работы</h2>
+        <p class="reveal" data-delay="1">Реальные видеообложки для товаров на маркетплейсах</p>
+      </header>
+      <div class="works__grid">
+        <!-- Рендерится из JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== Pricing ==================== -->
+  <section id="pricing" class="pricing section">
+    <div class="container">
+      <header class="pricing__header">
+        <h2 class="reveal">Прайс</h2>
+        <p class="reveal" data-delay="1">Прозрачные цены, без скрытых доплат</p>
+      </header>
+      <div class="pricing__grid">
+        <!-- Рендерится из JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== Testimonials ==================== -->
+  <section id="testimonials" class="testimonials section">
+    <div class="container">
+      <header class="testimonials__header">
+        <h2 class="reveal">Отзывы</h2>
+        <p class="reveal" data-delay="1">Что говорят наши клиенты</p>
+      </header>
+      <div class="testimonials__grid">
+        <!-- Рендерится из JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== Contact/CTA ==================== -->
+  <section id="contact" class="contact section">
+    <div class="container">
+      <h2 class="reveal">Готовы начать?</h2>
+      <p class="reveal" data-delay="1">Пришлите фото товара или ссылку на карточку — подготовим индивидуальное предложение</p>
+      <div class="reveal" data-delay="2" style="margin-top: var(--space-5);">
+        <button class="btn btn-primary btn-lg">Написать в Telegram</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== Footer ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 VideoPulse. AI-видеообложки для маркетплейсов.</p>
+      <p><a href="https://t.me/kwwmen" target="_blank" rel="noopener">Telegram: @kwwmen</a></p>
+    </div>
+  </footer>
+
+  <!-- ==================== Modal (для раскрытия видео) ==================== -->
+  <div class="modal">
+    <div class="modal__overlay"></div>
+    <div class="modal__content">
+      <button class="modal__close" aria-label="Закрыть">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+        </svg>
+      </button>
+      <video class="modal__video" controls></video>
+    </div>
+  </div>
+
+  <!-- ==================== Scripts ==================== -->
+  <script src="assets/js/app.js"></script>
+
+</body>
+</html>
