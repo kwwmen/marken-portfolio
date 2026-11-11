@@ -88,7 +88,7 @@
   color: var(--c-text-muted);
 }
 
-/* ——— Transform Section (тёмный экран с сигнатурной анимацией) ——— */
+/* ——— Transform Section (тёмный экран: фото → видео, цикл 7 сек) ——— */
 .transform {
   background: var(--c-dark-bg);
   color: var(--c-dark-text);
@@ -122,15 +122,15 @@
 
 .transform__demo {
   position: relative;
+  width: min(100%, 24rem);
   aspect-ratio: 9 / 16;
-  max-width: 24rem;
   margin-inline: auto;
   border-radius: var(--radius-lg);
   overflow: hidden;
   background: #000;
+  isolation: isolate;
 }
 
-/* Сам эффект «фото → видео» реализуется в JS через clip-path */
 .transform__photo,
 .transform__video {
   position: absolute;
@@ -140,8 +140,50 @@
   object-fit: cover;
 }
 
+.transform__photo {
+  z-index: 1;
+}
+
 .transform__video {
+  z-index: 2;
   clip-path: inset(0 100% 0 0);
+  animation: transformWipe 7s var(--ease-in-out) infinite;
+}
+
+.transform__scan {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  pointer-events: none;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.95) 0,
+    rgba(255, 255, 255, 0.95) 2px,
+    rgba(255, 255, 255, 0) 2px
+  );
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.8));
+  transform: translateX(-2px);
+  animation: transformScan 7s var(--ease-in-out) infinite;
+}
+
+@keyframes transformWipe {
+  0%   { clip-path: inset(0 100% 0 0); opacity: 1; }
+  8%   { clip-path: inset(0 100% 0 0); opacity: 1; }
+  38%  { clip-path: inset(0 0 0 0);    opacity: 1; }
+  80%  { clip-path: inset(0 0 0 0);    opacity: 1; }
+  88%  { clip-path: inset(0 0 0 0);    opacity: 0; }
+  100% { clip-path: inset(0 0 0 0);    opacity: 0; }
+}
+
+@keyframes transformScan {
+  0%   { transform: translateX(0);     opacity: 0; }
+  8%   { transform: translateX(0);     opacity: 1; }
+  36%  { transform: translateX(100%);  opacity: 1; }
+  38%  { transform: translateX(100%);  opacity: 0; }
+  100% { transform: translateX(100%);  opacity: 0; }
 }
 
 .transform__label {
@@ -149,14 +191,22 @@
   bottom: var(--space-4);
   left: 50%;
   transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
   font-size: var(--text-sm);
   font-weight: 600;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.92);
   color: var(--c-text);
   padding: var(--space-2) var(--space-4);
   border-radius: var(--radius-full);
   backdrop-filter: blur(4px);
+  white-space: nowrap;
   z-index: 10;
+}
+
+.transform__label-arrow {
+  color: var(--c-accent);
 }
 
 /* ——— Works Grid ——— */
@@ -184,8 +234,8 @@
 /* ——— Pricing Grid ——— */
 .pricing {
   padding-block: var(--space-8);
-  background: var(--c-bg);
 }
+
 
 .pricing__header {
   text-align: center;
@@ -276,4 +326,19 @@
 .footer a {
   color: var(--c-text-muted);
   text-decoration: underline;
+}
+
+/* ——— Уменьшенное движение: показываем видео сразу, без сканера и дрейфа ——— */
+@media (prefers-reduced-motion: reduce) {
+  .bg-scene__blob {
+    animation: none;
+  }
+  .transform__video {
+    animation: none;
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
+  .transform__scan {
+    display: none;
+  }
 }

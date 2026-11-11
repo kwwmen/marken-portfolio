@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="AI-видеообложки для товаров на Wildberries и Ozon. Превращаем фото в короткий рекламный ролик за 2 дня.">
+  <meta name="description" content="AI-видеообложки для товаров на Wildberries и Ozon. Превращаем фото в короткий рекламный ролик. Сдаём в день заказа.">
   <title>VideoPulse — AI-видеообложки для Wildberries и Ozon</title>
   
   <!-- Preconnect для ускорения загрузки шрифтов -->
@@ -19,6 +19,13 @@
   <link rel="stylesheet" href="assets/css/sections.css">
 </head>
 <body>
+
+  <!-- ==================== Живой фон ==================== -->
+  <div class="bg-scene" aria-hidden="true">
+    <span class="bg-scene__blob bg-scene__blob--1"></span>
+    <span class="bg-scene__blob bg-scene__blob--2"></span>
+    <span class="bg-scene__blob bg-scene__blob--3"></span>
+  </div>
 
   <!-- ==================== Navigation ==================== -->
   <nav class="nav">
@@ -38,7 +45,7 @@
     <div class="container">
       <h1 class="hero__title reveal">Карточка, которую досматривают до конца</h1>
       <p class="hero__subtitle reveal" data-delay="1">
-        Видеообложки 5–30 секунд из ваших фото.<br>Без съёмки. Сдаём за 2 дня.
+        Видеообложки 5–30 секунд из ваших фото.<br>Без съёмки. Сдаём в день заказа.
       </p>
       <div class="hero__cta reveal" data-delay="2">
         <a href="#works" class="btn btn-primary btn-lg">Смотреть работы</a>
@@ -56,20 +63,27 @@
         <p>Никакой съёмки. Только ваши исходные фотографии, AI-анимация и профессиональный монтаж.</p>
       </div>
       <div class="transform__demo">
-        <img 
-          class="transform__photo" 
-          src="assets/img/posters/work-1.webp" 
-          alt="Исходное фото"
+        <img
+          class="transform__photo"
+          src="assets/img/posters/work-1.webp"
+          alt="Исходное фото товара"
+          width="540"
+          height="960"
         />
-        <video 
-          class="transform__video" 
+        <video
+          class="transform__video"
           src="assets/video/work-1.mp4"
           loop
           muted
           playsinline
           preload="none"
         ></video>
-        <div class="transform__label">фото → видео</div>
+        <span class="transform__scan" aria-hidden="true"></span>
+        <div class="transform__label">
+          <span>фото</span>
+          <span class="transform__label-arrow" aria-hidden="true">→</span>
+          <span>видео</span>
+        </div>
       </div>
     </div>
   </section>
