@@ -1,61 +1,41 @@
 [
   {
-    "id": "work-1",
-    "title": "Бесконтактный дозатор мыла",
-    "category": "Для дома",
-    "video": "assets/video/work-1.mp4",
-    "poster": "assets/img/posters/work-1.webp",
-    "description": "Сенсор, выдача пены, движение камеры",
-    "duration": 8,
-    "demo": true
-  },
-  {
-    "id": "work-2",
-    "title": "Геймерская гарнитура",
-    "category": "Электроника",
-    "video": "assets/video/work-2.mp4",
-    "poster": "assets/img/posters/work-2.webp",
-    "description": "Подсветка, микрофон, комплектация",
-    "duration": 10,
-    "demo": true
-  },
-  {
-    "id": "work-3",
-    "title": "Коврик для мыши",
-    "category": "Аксессуары",
-    "video": "assets/video/work-3.mp4",
-    "poster": "assets/img/posters/work-3.webp",
-    "description": "Поверхность, размер, детали края",
-    "duration": 6,
-    "demo": true
-  },
-  {
-    "id": "work-4",
-    "title": "Термокружка",
-    "category": "Посуда",
-    "video": "assets/video/work-4.mp4",
-    "poster": "assets/img/posters/work-4.webp",
-    "description": "Крышка, материал, объём",
-    "duration": 7,
-    "demo": true
-  },
-  {
-    "id": "work-5",
-    "title": "LED-лампа с регулировкой",
-    "category": "Освещение",
-    "video": "assets/video/work-5.mp4",
-    "poster": "assets/img/posters/work-5.webp",
-    "description": "Смена температуры света, форма",
+    "id": "work-soap",
+    "title": "Сенсорный дозатор мыла",
+    "category": "Для дома",
+    "video": "assets/video/work-soap.mp4",
+    "poster": "assets/img/posters/work-soap.webp",
+    "description": "Сенсор срабатывает, пена выдаётся в ладонь",
     "duration": 9,
     "demo": true
   },
   {
-    "id": "work-6",
-    "title": "Органайзер для косметики",
-    "category": "Хранение",
-    "video": "assets/video/work-6.mp4",
-    "poster": "assets/img/posters/work-6.webp",
-    "description": "Отсеки, прозрачность, комплектация",
+    "id": "work-headphones",
+    "title": "Игровые наушники",
+    "category": "Электроника",
+    "video": "assets/video/work-headphones.mp4",
+    "poster": "assets/img/posters/work-headphones.webp",
+    "description": "Логотип, микрофон, визуализация звука",
+    "duration": 10,
+    "demo": true
+  },
+  {
+    "id": "work-thermo",
+    "title": "Термокружка",
+    "category": "Посуда",
+    "video": "assets/video/work-thermo.mp4",
+    "poster": "assets/img/posters/work-thermo.webp",
+    "description": "Матовый корпус, крышка, рифлёный пояс",
+    "duration": 8,
+    "demo": true
+  },
+  {
+    "id": "work-lamp",
+    "title": "Настольная LED-лампа",
+    "category": "Освещение",
+    "video": "assets/video/work-lamp.mp4",
+    "poster": "assets/img/posters/work-lamp.webp",
+    "description": "Две панели, гибкая ножка, крепление",
     "duration": 8,
     "demo": true
   }
