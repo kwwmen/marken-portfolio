@@ -1,0 +1,11 @@
+# Временные файлы
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Не игнорируем ничего из assets — всё нужно для GitHub Pages
