@@ -362,6 +362,12 @@
   border-top: 1px solid var(--c-border);
 }
 
+.footer p {
+  max-width: none;
+  margin-inline: auto;
+  text-align: center;
+}
+
 .footer a {
   color: var(--c-text-muted);
   text-decoration: underline;
