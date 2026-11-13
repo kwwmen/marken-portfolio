@@ -48,5 +48,15 @@
     "description": "Прошитый край, топографический рисунок",
     "duration": 8,
     "demo": true
+  },
+  {
+    "id": "work-gel",
+    "title": "Гель для стирки",
+    "category": "Бытовая химия",
+    "video": "assets/video/work-gel.mp4",
+    "poster": "assets/img/posters/work-gel.webp",
+    "description": "Канистра, мерный стаканчик, стирка",
+    "duration": 17,
+    "demo": true
   }
 ]

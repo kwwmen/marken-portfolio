@@ -345,10 +345,15 @@
 
 .contact__actions {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
   gap: var(--space-3);
-  justify-content: center;
   margin-top: var(--space-5);
+}
+
+.contact__actions .btn {
+  min-width: 16rem;
+  text-align: center;
 }
 
 .contact .btn-primary {
