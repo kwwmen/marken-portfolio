@@ -38,5 +38,15 @@
     "description": "Две панели, гибкая ножка, крепление",
     "duration": 8,
     "demo": true
+  },
+  {
+    "id": "work-mat",
+    "title": "Коврик для мыши и клавиатуры",
+    "category": "Аксессуары",
+    "video": "assets/video/work-mat.mp4",
+    "poster": "assets/img/posters/work-mat.webp",
+    "description": "Прошитый край, топографический рисунок",
+    "duration": 8,
+    "demo": true
   }
 ]
