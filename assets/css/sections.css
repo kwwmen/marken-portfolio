@@ -303,6 +303,23 @@
   }
 }
 
+.pricing__packages { margin-top: var(--space-7); }
+
+.pricing__packages-label {
+  text-align: center; max-width: none; margin-inline: auto;
+  margin-bottom: var(--space-4); font-size: var(--text-sm); font-weight: 600;
+  letter-spacing: var(--tracking-wide); text-transform: uppercase; color: var(--c-text-muted);
+}
+
+.pricing__packages-grid { display: grid; gap: var(--space-5); }
+
+@media (min-width: 48em) {
+  .pricing__packages-grid {
+    grid-template-columns: repeat(2, minmax(0, 24rem));
+    justify-content: center;
+  }
+}
+
 /* ——— Testimonials ——— */
 .testimonials {
   padding-block: var(--space-8);

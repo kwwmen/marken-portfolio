@@ -92,7 +92,7 @@ const App = {
     const grid = document.querySelector('.pricing__grid');
     if (!grid) return;
 
-    grid.innerHTML = this.data.pricing.map((item, idx) => `
+    const card = (item, idx) => `
       <article class="price-card reveal ${item.featured ? 'is-featured' : ''}" data-delay="${idx}">
         <h3 class="price-card__title">${item.title}</h3>
         <p class="price-card__description">${item.description}</p>
@@ -105,7 +105,20 @@ const App = {
         </button>
         <p class="price-card__note">${item.note}</p>
       </article>
-    `).join('');
+    `;
+
+    const tiers = this.data.pricing.filter(x => x.type !== 'package');
+    const packs = this.data.pricing.filter(x => x.type === 'package');
+
+    grid.innerHTML = tiers.map(card).join('');
+
+    const packGrid = document.querySelector('.pricing__packages');
+    if (packGrid && packs.length) {
+      packGrid.innerHTML = `
+        <p class="pricing__packages-label reveal">Выгоднее пакетом</p>
+        <div class="pricing__packages-grid">${packs.map(card).join('')}</div>
+      `;
+    }
   },
 
   renderTestimonials() {
