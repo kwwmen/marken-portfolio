@@ -82,7 +82,6 @@ const App = {
             <span>${work.category}</span>
             <span>•</span>
             <span>${work.duration} сек</span>
-            ${work.demo ? '<span class="work-card__badge">демо</span>' : ''}
           </div>
         </div>
       </article>
@@ -118,7 +117,6 @@ const App = {
         <p class="testimonial__quote">"${item.quote}"</p>
         <div class="testimonial__author">${item.author}</div>
         <div class="testimonial__role">${item.role}</div>
-        ${item.demo ? '<span class="testimonial__badge">демо-отзыв</span>' : ''}
       </article>
     `).join('');
   },

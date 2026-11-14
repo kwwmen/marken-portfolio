@@ -6,8 +6,7 @@
     "video": "assets/video/work-soap.mp4",
     "poster": "assets/img/posters/work-soap.webp",
     "description": "Сенсор срабатывает, пена выдаётся в ладонь",
-    "duration": 9,
-    "demo": true
+    "duration": 9
   },
   {
     "id": "work-headphones",
@@ -16,8 +15,7 @@
     "video": "assets/video/work-headphones.mp4",
     "poster": "assets/img/posters/work-headphones.webp",
     "description": "Логотип, микрофон, визуализация звука",
-    "duration": 10,
-    "demo": true
+    "duration": 10
   },
   {
     "id": "work-thermo",
@@ -26,8 +24,7 @@
     "video": "assets/video/work-thermo.mp4",
     "poster": "assets/img/posters/work-thermo.webp",
     "description": "Матовый корпус, крышка, рифлёный пояс",
-    "duration": 8,
-    "demo": true
+    "duration": 8
   },
   {
     "id": "work-lamp",
@@ -36,8 +33,7 @@
     "video": "assets/video/work-lamp.mp4",
     "poster": "assets/img/posters/work-lamp.webp",
     "description": "Две панели, гибкая ножка, крепление",
-    "duration": 8,
-    "demo": true
+    "duration": 8
   },
   {
     "id": "work-mat",
@@ -46,8 +42,7 @@
     "video": "assets/video/work-mat.mp4",
     "poster": "assets/img/posters/work-mat.webp",
     "description": "Прошитый край, топографический рисунок, скольжение",
-    "duration": 14,
-    "demo": true
+    "duration": 14
   },
   {
     "id": "work-gel",
@@ -56,7 +51,6 @@
     "video": "assets/video/work-gel.mp4",
     "poster": "assets/img/posters/work-gel.webp",
     "description": "Канистра, мерный стаканчик, стирка",
-    "duration": 17,
-    "demo": true
+    "duration": 17
   }
 ]
